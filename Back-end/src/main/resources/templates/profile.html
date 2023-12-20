@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+        xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>facebook example</title>
+</head>
+<body>
+<h1>Hi <span th:text="${profileName}"></span>!!
+</h1>
+<h4>
+    Here is your feed:
+</h4>
+<div th:each="post:${posts}">
+    <b th:text="${post.from.name}">from</b>wrote:
+    <p th:text="${post.message}">message text</p>
+    <img th:if="${post.picture}" th:src="${post.picture}">
+    <hr/>
+</div>
+</body>
+</html>
